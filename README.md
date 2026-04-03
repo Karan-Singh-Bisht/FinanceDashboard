@@ -2,7 +2,7 @@
 
 A modern, fully responsive personal finance dashboard built with **React 19**, **TypeScript**, and **Tailwind CSS v4**. Track transactions, visualize spending, manage roles, toggle themes with a cinematic ripple effect, and export reports — all from a polished single-page application.
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#-features)
 - [Tech Stack](#-tech-stack)
