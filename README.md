@@ -1,4 +1,4 @@
-# ✨ Luminous Ledger — Finance Dashboard
+# Luminous Ledger — Finance Dashboard
 
 A modern, fully responsive personal finance dashboard built with **React 19**, **TypeScript**, and **Tailwind CSS v4**. Track transactions, visualize spending, manage roles, toggle themes with a cinematic ripple effect, and export reports — all from a polished single-page application.
 
@@ -18,7 +18,7 @@ A modern, fully responsive personal finance dashboard built with **React 19**, *
 
 ---
 
-## 🚀 Features
+## Features
 
 | Feature | Description |
 | --- | --- |
@@ -35,7 +35,7 @@ A modern, fully responsive personal finance dashboard built with **React 19**, *
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 | --- | --- |
@@ -53,7 +53,7 @@ A modern, fully responsive personal finance dashboard built with **React 19**, *
 
 ---
 
-## 🏁 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -86,7 +86,7 @@ npm run lint       # Run ESLint
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
@@ -192,7 +192,7 @@ src/
 
 ---
 
-## 🏗 Architecture & Approach
+## Architecture & Approach
 
 ### Component Design
 
@@ -239,7 +239,7 @@ import { Button } from '@/components/ui/button'  // instead of '../../../compone
 
 ---
 
-## 🗂 State Management
+## State Management
 
 The app uses a **hybrid approach** — Redux for complex entity state, React Context for lightweight global state, and local `useState` for UI-only state:
 
@@ -257,7 +257,7 @@ The `transactionsSlice` syncs with `localStorage` under the key `luminous-ledger
 
 ---
 
-## 🎨 Theming
+## Theming
 
 ### Dark / Light Mode
 
@@ -276,7 +276,7 @@ The theme toggle in `mode-toggle.tsx` uses the **View Transitions API** to creat
 
 ---
 
-## 🔐 Role-Based Access Control
+## Role-Based Access Control
 
 The `RoleProvider` in `src/context/role-context.tsx` exposes `isAdmin` and `toggleRole()`. The role badge in the Navbar allows toggling between **Admin** and **User**.
 
@@ -291,7 +291,7 @@ The `RoleProvider` in `src/context/role-context.tsx` exposes `isAdmin` and `togg
 
 ---
 
-## 🎬 Animations
+## Animations
 
 Powered by **Framer Motion**:
 
@@ -308,7 +308,7 @@ Powered by **Framer Motion**:
 
 ---
 
-## 📊 CSV Export
+## CSV Export
 
 Available from both the **Dashboard** (BalanceOverview card) and the **Transactions** page (Export button).
 
@@ -323,7 +323,7 @@ File naming: `luminous-ledger-report-YYYY-MM-DD.csv`
 
 ---
 
-## 📱 Responsive Design
+## Responsive Design
 
 Every component is designed mobile-first with Tailwind responsive breakpoints:
 
