@@ -38,6 +38,7 @@ export const fetchTransactions = createAsyncThunk(
             console.error('Failed to fetch transactions:', err);
         }
     */
+    await new Promise((r) => setTimeout(r, 400))
     const data = loadFromStorage()
     return data
   }

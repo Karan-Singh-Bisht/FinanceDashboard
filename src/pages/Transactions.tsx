@@ -21,6 +21,7 @@ import {
 } from '@/redux/transactionsSlice'
 import { exportReportCSV } from '@/lib/exportReport'
 import { useRole } from '@/context/role-context'
+import { TransactionsSkeleton } from '@/components/skeletons'
 
 const ITEMS_PER_PAGE = 10
 
@@ -112,6 +113,8 @@ const Transactions = () => {
       transactions,
     })
   }
+
+  if (status === 'idle' || status === 'loading') return <TransactionsSkeleton />
 
   return (
     <motion.section

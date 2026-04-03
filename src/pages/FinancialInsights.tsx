@@ -1,4 +1,5 @@
 import { TrendingUp, Landmark, Compass } from 'lucide-react'
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import {
   PrimaryAllocation,
@@ -6,6 +7,9 @@ import {
   SmartTipCard,
   InsightStatCard,
 } from '@/components/insights'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { fetchTransactions } from '@/redux/transactionsSlice'
+import { InsightsSkeleton } from '@/components/skeletons'
 
 const stagger = {
   hidden: {},
@@ -18,6 +22,15 @@ const fadeUp = {
 }
 
 const FinancialInsights = () => {
+  const dispatch = useAppDispatch()
+  const { status } = useAppSelector((state) => state.transactions)
+
+  useEffect(() => {
+    if (status === 'idle') dispatch(fetchTransactions())
+  }, [status, dispatch])
+
+  if (status === 'idle' || status === 'loading') return <InsightsSkeleton />
+
   return (
     <motion.div
       className="relative space-y-6 sm:space-y-8"

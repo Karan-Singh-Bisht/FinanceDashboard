@@ -9,6 +9,7 @@ import {
 } from '@/components/dashboard'
 import { useAppDispatch, useAppSelector } from '@/redux/hooks'
 import { fetchTransactions } from '@/redux/transactionsSlice'
+import { DashboardSkeleton } from '@/components/skeletons'
 
 const stagger = {
   hidden: {},
@@ -45,6 +46,8 @@ const Dashboard = () => {
         .reduce((sum, tx) => sum + Math.abs(tx.amount), 0),
     [transactions]
   )
+
+  if (status === 'idle' || status === 'loading') return <DashboardSkeleton />
 
   return (
     <motion.section
