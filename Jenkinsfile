@@ -4,19 +4,11 @@ pipeline {
     environment {
         DOCKER_REPO = "karansbisht/financedashboard"
         TAG = "${BUILD_NUMBER}"
-
         DOCKER_CREDS = "docker-hub-login"
-
         CONTAINER_NAME = "financedashboard"
     }
 
     stages {
-
-        stage('Debug') {
-            steps {
-                sh 'git branch -a'
-            }
-        }
 
         stage('Clean Workspace') {
             steps {
@@ -26,10 +18,17 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git "https://github.com/Karan-Singh-Bisht/FinanceDashboard"
+                git branch: 'main',
+                    url: 'https://github.com/Karan-Singh-Bisht/FinanceDashboard'
             }
         }
 
+        stage('Debug') {
+            steps {
+                sh 'git branch -a'
+                sh 'git log -1 --oneline'
+            }
+        }
 
         stage('Build Image') {
             steps {
@@ -42,7 +41,7 @@ pipeline {
         stage('Push Image') {
             steps {
                 script {
-                    docker.withRegistry('https://index.docker.io/v1', DOCKER_CREDS) {
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDS) {
                         dockerImage.push()
                         dockerImage.push("latest")
                     }
