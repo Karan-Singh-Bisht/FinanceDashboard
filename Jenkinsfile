@@ -14,7 +14,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/Karan-Singh-Bisht/FinanceDashboard.git'
+                git 'https://github.com/Karan-Singh-Bisht/FinanceDashboard'
             }
         }
 
