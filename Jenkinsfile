@@ -18,6 +18,12 @@ pipeline {
             }
         }
 
+        stage('Debug') {
+            steps {
+                sh 'git branch -a'
+            }
+        }
+
         stage('Build Image') {
             steps {
                 script {
