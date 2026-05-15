@@ -61,7 +61,7 @@ const Dashboard = () => {
           <motion.div className="min-w-0 overflow-hidden" variants={fadeUp}>
             <BalanceOverview />
           </motion.div>
-
+          <h1>Testing CI/CD</h1>
           <motion.div className="min-w-0 grid gap-6" variants={stagger}>
             <motion.div className="min-w-0 overflow-hidden" variants={fadeUp}>
               <StatCard
