@@ -12,17 +12,18 @@ pipeline {
 
     stages {
 
+        stage('Debug') {
+            steps {
+                sh 'git branch -a'
+            }
+        }
+        
         stage('Checkout') {
             steps {
                 git "https://github.com/Karan-Singh-Bisht/FinanceDashboard"
             }
         }
 
-        stage('Debug') {
-            steps {
-                sh 'git branch -a'
-            }
-        }
 
         stage('Build Image') {
             steps {
