@@ -17,7 +17,13 @@ pipeline {
                 sh 'git branch -a'
             }
         }
-        
+
+        stage('Clean Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
+
         stage('Checkout') {
             steps {
                 git "https://github.com/Karan-Singh-Bisht/FinanceDashboard"
